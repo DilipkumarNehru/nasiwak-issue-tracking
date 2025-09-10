@@ -22,6 +22,25 @@ io.to(req.user.organization.toString()).emit('issueUpdated', {
     }
   }
 
+  async createIssuesBatch(req, res) {
+  try {
+    const issues = req.body;
+    if (!Array.isArray(issues)) return api.badRequest(res, 'Expected an array of issues');
+
+    const results = [];
+    for (const issueData of issues) {
+      const issue = new Issue(issueData);
+      await issue.save();
+      results.push(issue);
+    }
+
+    api.ok(res, results, 'Issues batch created');
+  } catch (err) {
+    api.serverError(res, err.message);
+  }
+}
+
+
   async listIssues(req, res) {
     try {
       const { status, priority, dueDate, page = 1, limit = 10 } = req.query;

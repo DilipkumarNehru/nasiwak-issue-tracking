@@ -6,6 +6,7 @@ const checkJWT = require('../middleware/checkJWT');
 const router = express.Router();
 
 router.post('/', checkJWT, issueController.createIssue);
+router.post('/batch', checkJWT, issueController.createIssuesBatch);
 router.get('/', checkJWT, issueController.listIssues);
 router.post('/:issueId/attachment', checkJWT, issueController.uploadAttachment);
 
