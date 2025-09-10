@@ -1,0 +1,27 @@
+{
+  "name": "nasiwak-backend",
+  "version": "1.0.0",
+  "description": "Team Issue Tracker backend with Node.js, Express, MongoDB",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.3.1",
+    "node-cron": "^4.2.1",
+    "socket.io": "^4.7.2"
+  },
+  "devDependencies": {
+    "jest": "^29.6.1",
+    "nodemon": "^3.0.1",
+    "supertest": "^6.3.3"
+  }
+}
