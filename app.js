@@ -63,4 +63,4 @@ server.listen(PORT, () => {
 });
 const overdueReminder = require('./src/worker/overdueReminder');
 overdueReminder(io);
-console.log('JWT_SECRET:', process.env.JWT_SECRET);
+// console.log('JWT_SECRET:', process.env.JWT_SECRET);
